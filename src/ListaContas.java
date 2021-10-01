@@ -33,7 +33,7 @@ public class ListaContas {
     public String listar() {
         StringBuilder builder = new StringBuilder();
         for (Conta conta : ListaContas.contas) {
-            builder.append(conta.toString());
+            builder.append("Nº da conta: " + conta);
         }
         return builder.toString();
     }

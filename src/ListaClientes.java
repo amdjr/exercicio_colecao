@@ -33,7 +33,7 @@ public class ListaClientes {
     public String listar() {
         StringBuilder builder = new StringBuilder();
         for (Cliente cliente : this.clientes) {
-            builder.append(cliente.toString());
+            builder.append("Nome: " + cliente.getNome() + " - cpf: " + cliente.getCpf() + "\n");
         }
         return builder.toString();
     }

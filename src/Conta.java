@@ -1,18 +1,18 @@
 public class Conta {
 
     private int numero;
-    private int saldo;
+    private float saldo;
 
-    Conta(int numero, int saldo) {
+    Conta(int numero, float saldo) {
         this.numero = numero;
         this.saldo = saldo;
     }
 
-    public int getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
+    public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
 
@@ -27,6 +27,11 @@ public class Conta {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nº %d\nSaldo %.2f\n\n", this.numero, this.saldo);
     }
 
 }
