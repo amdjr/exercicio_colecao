@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ListaClientes {
-    private ArrayList<Cliente> clientes = new ArrayList<>();
+    static ArrayList<Cliente> clientes = new ArrayList<>();
 
     public void cadastrar(Cliente cliente) {
         if (cliente != null) {
@@ -13,8 +13,8 @@ public class ListaClientes {
         clientes.removeIf((item) -> item.getCpf().equals(cliente.getCpf()));
     }
 
-    public Cliente buscar(Cliente cliente) {
-        for (Cliente item : this.clientes) {
+    public static Cliente buscar(Cliente cliente) {
+        for (Cliente item : clientes) {
             if (item.getCpf().equals(cliente.getCpf())) {
                 return item;
             }
@@ -24,16 +24,16 @@ public class ListaClientes {
     }
 
     public void editarCliente(Cliente cliente) {
-        int indice = clientes.indexOf(this.buscar(cliente));
+        int indice = clientes.indexOf(ListaClientes.buscar(cliente));
         if (indice != -1) {
             clientes.set(indice, cliente);
         }
     }
 
-    public String listar() {
+    public static String listar() {
         StringBuilder builder = new StringBuilder();
-        for (Cliente cliente : this.clientes) {
-            builder.append("Nome: " + cliente.getNome() + " - cpf: " + cliente.getCpf() + "\n");
+        for (Cliente cliente : ListaClientes.clientes) {
+            builder.append("Nome: " + cliente.getCpf() + " - cpf: " + cliente.getNome() + "\n");
         }
         return builder.toString();
     }

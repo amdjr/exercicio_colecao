@@ -9,17 +9,25 @@ public class Principal {
 
         System.out.println(ListaGerentes.listar());
 
-        System.out.println(ListaGerentes.buscar(carlos));
+        Cliente ana = new Cliente("Ana", "9595511455");
+        Cliente mario = new Cliente("Mario", "9971633633");
+
+        ListaClientes.clientes.add(ana);
+        ListaClientes.clientes.add(mario);
+
+        System.out.println(ListaClientes.listar());
 
         ListaContas banco = new ListaContas();
 
-        Conta conta1 = new Conta(1, 200);
-        Conta conta2 = new Conta(2, 5200);
+        Conta conta1 = new Conta(19559, 200);
+        Conta conta2 = new Conta(22591, 5200);
 
         banco.addContas(conta1);
         banco.addContas(conta2);
 
         System.out.println(banco.listar());
+
+        System.out.println(banco.buscar(conta1));
 
     }
 }

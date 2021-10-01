@@ -17,7 +17,7 @@ public class ListaGerentes {
     public static Gerente buscar(Gerente gerente) {
         for (Gerente itemDaLista : gerentes) {
             if (itemDaLista.getNome().equalsIgnoreCase(gerente.getNome())) {
-                return itemDaLista;
+                return gerente;
             }
         }
         return null;
